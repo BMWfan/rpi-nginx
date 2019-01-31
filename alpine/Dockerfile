@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi-alpine:3.8
+FROM balenalib/raspberry-pi-alpine:3.8
 
 RUN [ "cross-build-start" ]
 

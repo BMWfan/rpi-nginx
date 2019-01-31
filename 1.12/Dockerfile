@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:stretch
+FROM balenalib/rpi-raspbian:stretch
 
 LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>" \
 	fork_by="Tobias Hargesheimer <docker@ison.ws>"
