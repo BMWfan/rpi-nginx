@@ -1,0 +1,44 @@
+sudo: required
+services:
+  - docker
+language: bash
+env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::8}
+    - REPOSITORY=${DOCKER_USERNAME}/rpi-nginx
+script:
+  - |
+    echo "Updating Docker to have docker manifest command"
+    curl https://get.docker.com | sh
+    echo "Enabling docker client experimental features"
+    mkdir -p ~/.docker
+    echo '{ "experimental": "enabled" }' > ~/.docker/config.json
+    docker version
+  # prepare qemu
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  # build image
+  - docker build --no-cache -t nginx-alpine -f alpine.armhf.Dockerfile .
+  - docker build --no-cache -t nginx-stretch -f stretch.armhf.Dockerfile .
+  # test image
+  - docker run --rm nginx-alpine nginx -v
+  - docker run --rm nginx-stretch nginx -v
+  # push image
+  - >
+    if [ "$TRAVIS_BRANCH" == "master" ] ; then
+      echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      docker tag nginx-alpine $REPOSITORY:alpine
+      docker tag nginx-stretch $REPOSITORY:stretch
+      docker tag nginx-stretch $REPOSITORY:latest
+      docker push $REPOSITORY:alpine
+      docker push $REPOSITORY:stretch
+      docker push $REPOSITORY:latest
+      docker manifest create $REPOSITORY:alpine $REPOSITORY:alpine
+      docker manifest annotate $REPOSITORY:alpine $REPOSITORY:alpine --os linux --arch arm
+      docker manifest push $REPOSITORY:alpine
+      docker manifest create $REPOSITORY:stretch $REPOSITORY:stretch
+      docker manifest annotate $REPOSITORY:stretch $REPOSITORY:stretch --os linux --arch arm
+      docker manifest push $REPOSITORY:stretch
+      docker manifest create $REPOSITORY:latest $REPOSITORY:latest
+      docker manifest annotate $REPOSITORY:latest $REPOSITORY:latest --os linux --arch arm
+      docker manifest push $REPOSITORY:latest
+    fi
