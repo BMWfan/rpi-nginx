@@ -16,6 +16,7 @@ ENV NGINX_VERSION 1.14.*
 
 RUN echo 'deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi' > /etc/apt/sources.list.d/buster.list \
 	#&& echo -e 'Package: *\nPin: release n=stretch\nPin-Priority: 900\n\nPackage: *\nPin: release n=buster\nPin-Priority: 750' > /etc/apt/preferences.d/10-buster \
+	#&& echo -e 'Package: *\nPin: release n=buster\nPin-Priority: 400' > /etc/apt/preferences.d/buster-pinning \
 	&& apt-get update \
 	&& apt-get install -y ca-certificates \
 	&& apt-get install -y -t buster nginx=${NGINX_VERSION} \
