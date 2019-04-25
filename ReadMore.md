@@ -12,6 +12,6 @@ Here information about the building process with Hooks:
 
 
 ToDo: set architecture (for [Issue-2](https://github.com/Tob1asDocker/rpi-nginx/issues/2)):
-* (This currently does not work on Docker Hub, anyone got an idea? [Travis-CI](https://travis-ci.com/Tob1asDocker/rpi-nginx)?)
+* (This currently does not work on Docker Hub, anyone got an idea? [Travis-CI](https://travis-ci.com/Tob1asDocker/rpi-nginx) or [CircleCI](https://circleci.com), [example](https://github.com/jessestuart/minio-multiarch)?)
 * https://docs.docker.com/engine/reference/commandline/manifest/
 * https://github.com/hypriot/rpi-mysql/issues/11 and https://github.com/hypriot/rpi-mysql/commit/facccbb79c844356792832af83ff2239f6e08450
