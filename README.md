@@ -11,7 +11,12 @@ Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, H
 
 ![logo](https://raw.githubusercontent.com/docker-library/docs/master/nginx/logo.png)
 
-### How to use this image
+### About these images:
+* based on *[balena.io Base-Images](https://www.balena.io/docs/reference/base-images/base-images/)*.
+* build on Docker Hub with *[Advanced options for Autobuild](https://docs.docker.com/docker-hub/builds/advanced/)* inspired by *[https://stackoverflow.com/a/54595564](https://stackoverflow.com/questions/54578066/how-to-build-a-docker-image-on-a-specific-architecture-with-docker-hub/54595564#54595564)*.
+* additional software/tools used: *[qemu-user-static from multiarch](https://github.com/multiarch/qemu-user-static)* and *[manifest-tool](https://github.com/estesp/manifest-tool)*. Thanks for the great things!
+
+### How to use these images:
 
 * ``` $ docker pull tobi312/rpi-nginx ```
 * Optional: ``` $ mkdir -p /home/pi/{.ssl,html} && mkdir -p /home/pi/.config/nginx && touch /home/pi/.config/nginx/default.conf ``` and edit [default.conf](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/default.conf)
@@ -19,8 +24,6 @@ Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, H
 	* ``` $ openssl req -x509 -newkey rsa:4086 -subj "/C=/ST=/L=/O=/CN=localhost" -keyout "ssl.key" -out "ssl.crt" -days 3650 -nodes -sha256 ```
 	* ``` $ mv ssl.* /home/pi/.ssl/ ```
 * ``` $ docker run --name nginx -d -p 80:80 -p 443:443 --link some-php-fpm-container:phphost -v /home/pi/.ssl:/etc/nginx/ssl:ro -v /home/pi/.config/nginx:/etc/nginx/conf.d:ro -v /home/pi/html:/var/www/html tobi312/rpi-nginx ```  
-
-=> [ReadMore](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/ReadMore.md)
 
 ### You need PHP (PHP-FPM)?, see here: 
 * [DockerHub](https://hub.docker.com/r/tobi312/rpi-php/)
