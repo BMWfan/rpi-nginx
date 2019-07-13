@@ -1,4 +1,4 @@
-# NGINX on Raspberry Pi / armhf
+# NGINX on Raspberry Pi / ARM
 
 ### Supported tags and respective `Dockerfile` links
 -	[`alpine` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/alpine.armhf.Dockerfile) ([current Version: 1.14](https://pkgs.alpinelinux.org/package/v3.9/main/armhf/nginx) on AlpineLinux)
@@ -12,9 +12,9 @@ Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, H
 ![logo](https://raw.githubusercontent.com/docker-library/docs/master/nginx/logo.png)
 
 ### About these images:
-* based on *[balena.io Base-Images](https://www.balena.io/docs/reference/base-images/base-images/)*.
-* build on Docker Hub with *[Advanced options for Autobuild](https://docs.docker.com/docker-hub/builds/advanced/)* inspired by *[https://stackoverflow.com/a/54595564](https://stackoverflow.com/questions/54578066/how-to-build-a-docker-image-on-a-specific-architecture-with-docker-hub/54595564#54595564)*.
-* additional software/tools used: *[qemu-user-static from multiarch](https://github.com/multiarch/qemu-user-static)* and *[manifest-tool](https://github.com/estesp/manifest-tool)*. Thanks for the great things!
+* based on [balena.io Base-Images](https://www.balena.io/docs/reference/base-images/base-images/).
+* build on Docker Hub with [Advanced options for Autobuild](https://docs.docker.com/docker-hub/builds/advanced/) inspired by [https://stackoverflow.com/a/54595564](https://stackoverflow.com/questions/54578066/how-to-build-a-docker-image-on-a-specific-architecture-with-docker-hub/54595564#54595564).
+* additional software/tools used: [qemu-user-static from multiarch](https://github.com/multiarch/qemu-user-static) and [manifest-tool](https://github.com/estesp/manifest-tool). Thanks for the great things!
 
 ### How to use these images:
 
