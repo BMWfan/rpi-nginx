@@ -15,8 +15,7 @@ RUN [ ${CROSS_BUILD_START} ]
 ENV NGINX_VERSION 1.14.*
 
 RUN apt-get update \
-	&& apt-get install -y ca-certificates \
-	&& apt-get install -y -t buster nginx=${NGINX_VERSION} \
+	&& apt-get install -y ca-certificates nginx=${NGINX_VERSION} \
 	#&& rm /var/www/html/index.nginx-debian.html \
 	&& rm -rf /var/lib/apt/lists/*
 
