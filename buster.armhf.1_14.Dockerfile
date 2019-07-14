@@ -1,8 +1,8 @@
-FROM balenalib/rpi-raspbian:stretch
+FROM balenalib/rpi-raspbian:buster
 
 LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
 	org.opencontainers.image.title="NGINX" \
-	org.opencontainers.image.description="Debian 9 Stretch with NGINX on arm arch" \
+	org.opencontainers.image.description="Debian 10 Buster with NGINX on arm arch" \
 	org.opencontainers.image.licenses="Apache-2.0" \
 	org.opencontainers.image.url="https://hub.docker.com/r/tobi312/rpi-nginx/" \
 	org.opencontainers.image.source="https://github.com/Tob1asDocker/rpi-nginx"
@@ -14,10 +14,7 @@ RUN [ ${CROSS_BUILD_START} ]
 
 ENV NGINX_VERSION 1.14.*
 
-RUN echo 'deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi' > /etc/apt/sources.list.d/buster.list \
-	#&& echo -e 'Package: *\nPin: release n=stretch\nPin-Priority: 900\n\nPackage: *\nPin: release n=buster\nPin-Priority: 750' > /etc/apt/preferences.d/10-buster \
-	#&& echo -e 'Package: *\nPin: release n=buster\nPin-Priority: 400' > /etc/apt/preferences.d/buster-pinning \
-	&& apt-get update \
+RUN apt-get update \
 	&& apt-get install -y ca-certificates \
 	&& apt-get install -y -t buster nginx=${NGINX_VERSION} \
 	#&& rm /var/www/html/index.nginx-debian.html \
