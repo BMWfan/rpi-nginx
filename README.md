@@ -2,7 +2,7 @@
 
 ### Supported tags and respective `Dockerfile` links
 -	[`alpine` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/alpine.armhf.Dockerfile) ([current Version: 1.14](https://pkgs.alpinelinux.org/package/v3.9/main/armhf/nginx) on AlpineLinux)
--	[`1.14`, `latest` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/stretch.armhf.1_14.Dockerfile) (on Debian 9 Stretch)
+-	[`1.14`, `latest` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/buster.armhf.1_14.Dockerfile) (on Debian 10 Buster)
 -	[`1.10` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-nginx/blob/master/stretch.armhf.1_10.Dockerfile) (on Debian 9 Stretch)
 
 ### What is Nginx?
