@@ -1,4 +1,4 @@
-FROM balenalib/raspberry-pi-alpine:3.9
+FROM balenalib/raspberry-pi-alpine:3.11
 
 LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
 	org.opencontainers.image.title="NGINX" \
@@ -12,7 +12,7 @@ ARG CROSS_BUILD_END=":"
 
 RUN [ ${CROSS_BUILD_START} ]
 
-ENV NGINX_VERSION 1.14
+ENV NGINX_VERSION 1.16
 
 RUN apk --no-cache add nginx>${NGINX_VERSION} \
 	&& mkdir -p /run/nginx \

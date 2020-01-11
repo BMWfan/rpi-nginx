@@ -1,4 +1,4 @@
-FROM arm32v6/alpine:3.10
+FROM arm32v6/alpine:3.11
 
 LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
 	org.opencontainers.image.title="NGINX" \
