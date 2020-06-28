@@ -1,8 +1,8 @@
-FROM arm32v6/alpine:3.11
+FROM arm32v7/alpine:3.11
 
 LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
 	org.opencontainers.image.title="NGINX" \
-	org.opencontainers.image.description="AlpineLinux with NGINX on arm arch" \
+	org.opencontainers.image.description="AlpineLinux 3.11 with NGINX 1.16 on arm arch" \
 	org.opencontainers.image.licenses="Apache-2.0" \
 	org.opencontainers.image.url="https://hub.docker.com/r/tobi312/rpi-nginx/" \
 	org.opencontainers.image.source="https://github.com/Tob1asDocker/rpi-nginx"

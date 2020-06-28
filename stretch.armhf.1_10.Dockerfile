@@ -1,16 +1,11 @@
-FROM balenalib/rpi-raspbian:stretch
+FROM arm32v7/debian:stretch-slim
 
 LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
 	org.opencontainers.image.title="NGINX" \
-	org.opencontainers.image.description="Debian 9 Stretch with NGINX on arm arch" \
+	org.opencontainers.image.description="Debian 9 Stretch with NGINX 1.10 on arm arch" \
 	org.opencontainers.image.licenses="Apache-2.0" \
 	org.opencontainers.image.url="https://hub.docker.com/r/tobi312/rpi-nginx/" \
 	org.opencontainers.image.source="https://github.com/Tob1asDocker/rpi-nginx"
-
-ARG CROSS_BUILD_START=":"
-ARG CROSS_BUILD_END=":"
-
-RUN [ ${CROSS_BUILD_START} ]
 
 ENV NGINX_VERSION 1.10.*
 
@@ -28,5 +23,3 @@ RUN sed -i "s/worker_processes auto;/worker_processes 1;/g" /etc/nginx/nginx.con
 EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
-
-RUN [ ${CROSS_BUILD_END} ]
