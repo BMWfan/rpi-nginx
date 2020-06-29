@@ -13,7 +13,7 @@ Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, H
 ### About these images:
 * based on official Images: [arm32v7/debian](https://hub.docker.com/r/arm32v7/debian/) and [arm32v7/alpine](https://hub.docker.com/r/arm32v7/alpine/).
 * build on Docker Hub with Autobuild, for example and more details see in this [repository](https://github.com/Tob1asDocker/dockerhubhooksexample).
-* **Information: Thanks for over 10M pulls :-) But since some time there are official NGINX ARM-Images available! I recommend to use them.** See official [NGINX](https://hub.docker.com/_/nginx)-Image for supported architectures ([arm32v5/nginx](https://hub.docker.com/r/arm32v5/nginx/), [arm32v6/nginx](https://hub.docker.com/r/arm32v6/nginx/), [arm32v7/nginx](https://hub.docker.com/r/arm32v7/nginx/), [arm64v8/nginx](https://hub.docker.com/r/arm64v8/nginx/)). 
+* **Information: Thanks for over 5M pulls :-) But since some time there are official NGINX ARM-Images available! I recommend to use them.** See official [NGINX](https://hub.docker.com/_/nginx)-Image for supported architectures ([arm32v5/nginx](https://hub.docker.com/r/arm32v5/nginx/), [arm32v6/nginx](https://hub.docker.com/r/arm32v6/nginx/), [arm32v7/nginx](https://hub.docker.com/r/arm32v7/nginx/), [arm64v8/nginx](https://hub.docker.com/r/arm64v8/nginx/)). 
 
 ### How to use these images:
 
